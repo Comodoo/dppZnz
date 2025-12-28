@@ -1,17 +1,19 @@
 <div>
     <div class="section-container">
         <div class="content-wrapper">
-            <h2 class="text-4xl font-extrabold text-[#0D84BE] mb-12">
-            <span class="text-yellow-400">Our Strategic</span>  Partners
-        </h2>
-        <h5 class="text-xl font-extrabold text-[#0D84BE] mb-8">The Zanzibar Law Resource Centre (ZLRC) is currently offer the following Courses.</h5>
-        <br>
-            
+            <div class = "guide">
+                <h2 class="text-4xl font-extrabold text-[#0D84BE] mb-12">
+                    <span class="text-yellow-400">Our Strategic</span> Partners
+                </h2>
+                <h5 class="text-xl font-extrabold text-[#0D84BE] mb-8">The Zanzibar Law Resource Centre (ZLRC) is
+                    currently offer the following Courses.</h5>
+
+            </div>
+            <br>
+
             <div class="grid">
-                @foreach($items as $item)
-                    <div class="card" 
-                         data-color="{{ $item['color'] }}"
-                         wire:click="openPage('{{ $item['title'] }}')">
+                @foreach ($items as $item)
+                    <div class="card" data-color="{{ $item['color'] }}" wire:click="openPage('{{ $item['title'] }}')">
 
                         <div class="card-header">
                             <div class="icon icon-{{ $item['color'] }}">{{ $item['icon'] }}</div>
@@ -22,9 +24,8 @@
                             {{ $item['description'] }}
                         </div>
 
-                        <a  target="_blank" href="{{$item['link']}}" 
-                           class="read-guide" 
-                           wire:click.stop="openGuide('{{ $item['title'] }}')">
+                        <a target="_blank" href="{{ $item['link'] }}" class="read-guide"
+                            wire:click.stop="openGuide('{{ $item['title'] }}')">
                             Read Guide
                         </a>
                     </div>
@@ -35,13 +36,17 @@
 
     <style>
         /* Section container with white background covering full width */
+        .guide {
+            text-align: center;
+        }
+
         .section-container {
             background-color: white;
             width: 100%;
             padding: 40px 0;
             margin: 0;
         }
-        
+
         /* Content wrapper with max-width and centered */
         .content-wrapper {
             max-width: 1300px;
@@ -74,7 +79,7 @@
 
         .card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
             border-color: transparent;
         }
 
@@ -313,20 +318,20 @@
             .section-container {
                 padding: 30px 0;
             }
-            
+
             .content-wrapper {
                 padding: 0 15px;
             }
-            
+
             h1 {
                 font-size: 1.8rem;
                 margin-bottom: 25px;
             }
-            
+
             .grid {
                 gap: 20px;
             }
-            
+
             .card {
                 padding: 20px;
             }
@@ -336,21 +341,21 @@
             .section-container {
                 padding: 20px 0;
             }
-            
+
             h1 {
                 font-size: 1.5rem;
             }
-            
+
             .grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .icon {
                 width: 36px;
                 height: 36px;
                 font-size: 16px;
             }
-            
+
             .card-title {
                 font-size: 1.1rem;
             }

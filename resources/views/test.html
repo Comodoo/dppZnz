@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer - Serikali Mtandao</title>
+    <title>Department of Transnational and Economic Crimes - DPP Zanzibar</title>
     <style>
+        /* General Reset & Typography */
         * {
             margin: 0;
             padding: 0;
@@ -13,540 +14,738 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            min-height: 100vh;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f8f9fa;
         }
 
-        /* Main footer wrapper with background image and gradient overlay */
-        .footer-wrapper {
-            position: relative;
+        /* HERO BANNER */
+        .hero-banner {
             width: 100%;
-            margin-top: 100px;
-            color: white;
-            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
-            background: 
-                /* Gradient overlay - same color */
-                linear-gradient(135deg, rgba(30, 136, 229, 0.95), rgba(25, 118, 210, 0.95)),
-                /* Background image */
-                url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-
-        /* Modern top border effect */
-        .footer-top-border {
+            height: 300px;
+            background: linear-gradient(135deg, #003366 0%, #0057b7 50%, #007bff 100%);
             position: relative;
-            width: 100%;
-            height: 40px;
-            background: linear-gradient(135deg, rgba(30, 136, 229, 0.8), rgba(25, 118, 210, 0.8));
             overflow: hidden;
-            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
-        }
-
-        .footer-top-border::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg,
-                transparent 0%,
-                #ffd700 20%,
-                #ffd700 80%,
-                transparent 100%);
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-        }
-
-        /* Main footer content section */
-        .footer-main {
-            position: relative;
-            padding: 80px 20px 40px;
-            z-index: 2;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            position: relative;
-            z-index: 3;
-        }
-
-        .footer-column h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: #ffd700;
-            border-radius: 2px;
-        }
-
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-column li {
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-
-        .footer-column a {
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .footer-column a:hover {
-            color: #ffd700;
-        }
-
-        .contact-info {
-            margin-top: 20px;
-        }
-
-        .contact-info p {
-            margin: 8px 0;
-            line-height: 1.6;
-        }
-
-        .phone-numbers {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .phone-number {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #ffd700;
-            font-weight: 500;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background 0.2s ease, transform 0.2s ease;
-        }
-
-        .social-icon:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-3px);
-        }
-
-        .social-icon i {
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        /* Copyright section */
-        .copyright {
-            position: relative;
-            padding: 40px 20px 30px;
-            z-index: 2;
-        }
-
-        .copyright-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 30px;
-            position: relative;
-            z-index: 3;
-        }
-
-        .copyright-column h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-            color: #ffd700;
-        }
-
-        .copyright-column h4::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: #ffd700;
-            border-radius: 2px;
-        }
-
-        .copyright-column p {
-            margin: 0 0 10px 0;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            opacity: 0.9;
-        }
-
-        .copyright-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .copyright-links li {
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-
-        .copyright-links a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            transition: color 0.2s ease;
-            font-size: 0.9rem;
-        }
-
-        .copyright-links a:hover {
-            color: #ffd700;
-        }
-
-        .copyright-bottom {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
-            font-size: 0.85rem;
-            opacity: 0.8;
+            color: white;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 60px;
         }
 
-        /* Floating buttons */
-        .floating-buttons {
-            position: fixed;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 1000;
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
         }
 
-        .floating-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: #ffd700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #1e88e5;
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .hero-subtitle {
             font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            transition: transform 0.2s ease, background 0.2s ease;
+            opacity: 0.9;
+            font-weight: 300;
         }
 
-        .floating-btn:hover {
-            transform: scale(1.1);
-            background: #ffca28;
-        }
-
-        .floating-btn i {
-            pointer-events: none;
-        }
-
-        /* Grid lines effect */
-        .grid-lines {
+        /* Digital Pattern Overlay */
+        .digital-pattern {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
             z-index: 1;
         }
 
-        .grid-line {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .grid-line.vertical {
-            width: 1px;
-            height: 100%;
-        }
-
-        .grid-line.horizontal {
+        .digital-pattern svg {
             width: 100%;
-            height: 1px;
+            height: 100%;
+            fill: rgba(255, 255, 255, 0.1);
         }
 
-        /* Responsive */
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: -80px auto 40px;
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Main Card Container */
+        .main-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Content Layout */
+        .content-wrapper {
+            padding: 40px;
+            min-height: 600px;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #0056b3;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.2rem;
+            color: #003366;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .page-header .intro-text {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Department Overview Section */
+        .overview-section {
+            background: linear-gradient(to right, #f0f7ff, #e6f2ff);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #0056b3;
+            margin-bottom: 40px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .overview-section h2 {
+            font-size: 1.6rem;
+            color: #003366;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .overview-section p {
+            font-size: 1.1rem;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* Divisions Section */
+        .divisions-section {
+            margin-bottom: 40px;
+        }
+
+        .divisions-section h2 {
+            font-size: 1.8rem;
+            color: #003366;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+            font-weight: 700;
+        }
+
+        .divisions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .division-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .division-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            border-color: #0056b3;
+        }
+
+        .division-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #059669, #10b981);
+        }
+
+        .division-card h3 {
+            font-size: 1.4rem;
+            color: #003366;
+            margin-bottom: 15px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .division-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .division-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        /* Responsibilities Section */
+        .responsibilities-section {
+            margin-bottom: 40px;
+        }
+
+        .responsibilities-section h2 {
+            font-size: 1.8rem;
+            color: #003366;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+            font-weight: 700;
+        }
+
+        .responsibilities-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .responsibility-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .responsibility-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-color: #0056b3;
+        }
+
+        .responsibility-number {
+            background: linear-gradient(135deg, #0056b3, #003366);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-right: 20px;
+            margin-top: 2px;
+        }
+
+        .responsibility-content {
+            flex-grow: 1;
+        }
+
+        .responsibility-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #003366;
+            margin-bottom: 8px;
+        }
+
+        .responsibility-description {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Note Section */
+        .note-section {
+            background: linear-gradient(to right, #fff8e6, #fff3d9);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #f59e0b;
+            margin-top: 40px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .note-section h3 {
+            color: #d97706;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .note-section h3::before {
+            content: '⚖️';
+            margin-right: 10px;
+            font-size: 1.4rem;
+        }
+
+        .note-section p {
+            color: #92400e;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* Crime Types Grid */
+        .crime-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .crime-type-item {
+            background: #f8fafc;
+            padding: 12px 15px;
+            border-radius: 6px;
+            border-left: 4px solid #059669;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 95%;
+            }
+        }
+
         @media (max-width: 768px) {
-            .footer-container {
+            .hero-banner {
+                height: 220px;
+                margin-bottom: 40px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .container {
+                margin: -60px auto 30px;
+            }
+
+            .content-wrapper {
+                padding: 30px;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .divisions-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
             }
 
-            .copyright-container {
+            .responsibility-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .responsibility-number {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+
+            .crime-types {
                 grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .floating-buttons {
-                right: 10px;
-                top: 90%;
-                transform: translateY(-90%);
-            }
-
-            .footer-main {
-                padding: 70px 15px 30px;
-            }
-
-            .footer-top-border {
-                height: 30px;
-            }
-
-            .copyright {
-                padding: 30px 15px 20px;
-            }
-            
-            .footer-wrapper {
-                background-attachment: scroll;
             }
         }
 
-        @media (max-width: 480px) {
-            .floating-buttons {
-                display: none;
+        @media (max-width: 600px) {
+            .hero-banner {
+                height: 180px;
             }
 
-            .footer-main {
-                padding: 60px 15px 20px;
+            .hero-title {
+                font-size: 1.6rem;
             }
 
-            .footer-top-border {
-                height: 20px;
+            .hero-subtitle {
+                font-size: 1rem;
             }
 
-            .phone-numbers {
-                flex-direction: column;
-                gap: 10px;
+            .container {
+                margin: -50px auto 20px;
             }
 
-            .copyright {
-                padding: 20px 15px 15px;
+            .content-wrapper {
+                padding: 20px;
             }
-            
-            .footer-wrapper {
-                background: 
-                    linear-gradient(135deg, rgba(30, 136, 229, 0.95), rgba(25, 118, 210, 0.95)),
-                    url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80');
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
+
+            .page-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .overview-section {
+                padding: 20px;
+            }
+
+            .division-card {
+                padding: 20px;
+            }
+
+            .responsibility-item {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero-banner {
+                height: 160px;
+            }
+
+            .hero-title {
+                font-size: 1.4rem;
+            }
+
+            .page-header h1 {
+                font-size: 1.3rem;
             }
         }
     </style>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <!-- Demo content above footer -->
-    <div style="height: 400px; padding: 40px; text-align: center; background: linear-gradient(135deg, #e3f2fd, #f5f5f5);">
-        <h1 style="color: #1565c0;">Content Area</h1>
-        <p style="color: #666;">This is the main content area above the footer</p>
+    <!-- Header Component -->
+    @livewire('header')
+
+    <!-- HERO BANNER -->
+    <div class="hero-banner">
+        <div class="digital-pattern">
+            <!-- SVG Pattern: Dots, Lines, Justice Scales -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1200 300">
+                <!-- Wave Pattern -->
+                <path d="M0,150 Q300,50 600,150 T1200,150 L1200,300 L0,300 Z" fill="none"
+                    stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+                <path d="M0,100 Q300,200 600,100 T1200,100 L1200,300 L0,300 Z" fill="none"
+                    stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+
+                <!-- Dot Grid -->
+                <g opacity="0.3">
+                    <circle cx="50" cy="50" r="2" />
+                    <circle cx="150" cy="70" r="2" />
+                    <circle cx="250" cy="40" r="2" />
+                    <circle cx="350" cy="80" r="2" />
+                    <circle cx="450" cy="60" r="2" />
+                    <circle cx="550" cy="90" r="2" />
+                    <circle cx="650" cy="50" r="2" />
+                    <circle cx="750" cy="70" r="2" />
+                    <circle cx="850" cy="40" r="2" />
+                    <circle cx="950" cy="80" r="2" />
+                    <circle cx="1050" cy="60" r="2" />
+                    <circle cx="1150" cy="90" r="2" />
+                </g>
+
+                <!-- Justice Scale Icons -->
+                <g opacity="0.4">
+                    <path d="M200,180 L240,180 M220,180 L220,200" stroke="white" stroke-width="1" />
+                    <path d="M200,190 L240,190" stroke="white" stroke-width="1" />
+                    <path d="M210,200 L230,200" stroke="white" stroke-width="1" />
+                    
+                    <path d="M500,180 L540,180 M520,180 L520,200" stroke="white" stroke-width="1" />
+                    <path d="M500,190 L540,190" stroke="white" stroke-width="1" />
+                    <path d="M510,200 L530,200" stroke="white" stroke-width="1" />
+                    
+                    <path d="M800,180 L840,180 M820,180 L820,200" stroke="white" stroke-width="1" />
+                    <path d="M800,190 L840,190" stroke="white" stroke-width="1" />
+                    <path d="M810,200 L830,200" stroke="white" stroke-width="1" />
+                </g>
+
+                <!-- Network Lines -->
+                <g opacity="0.2">
+                    <line x1="20" y1="250" x2="80" y2="270" stroke="white" stroke-width="1" />
+                    <line x1="120" y1="260" x2="180" y2="240" stroke="white" stroke-width="1" />
+                    <line x1="220" y1="250" x2="280" y2="270" stroke="white" stroke-width="1" />
+                    <line x1="320" y1="260" x2="380" y2="240" stroke="white" stroke-width="1" />
+                    <line x1="420" y1="250" x2="480" y2="270" stroke="white" stroke-width="1" />
+                    <line x1="520" y1="260" x2="580" y2="240" stroke="white" stroke-width="1" />
+                    <line x1="620" y1="250" x2="680" y2="270" stroke="white" stroke-width="1" />
+                    <line x1="720" y1="260" x2="780" y2="240" stroke="white" stroke-width="1" />
+                    <line x1="820" y1="250" x2="880" y2="270" stroke="white" stroke-width="1" />
+                    <line x1="920" y1="260" x2="980" y2="240" stroke="white" stroke-width="1" />
+                    <line x1="1020" y1="250" x2="1080" y2="270" stroke="white" stroke-width="1" />
+                    <line x1="1120" y1="260" x2="1180" y2="240" stroke="white" stroke-width="1" />
+                </g>
+            </svg>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">DEPARTMENT OF TRANSNATIONAL AND ECONOMIC CRIMES</h1>
+            <p class="hero-subtitle">Combating Cross-Border Crimes and Economic Offenses</p>
+        </div>
     </div>
 
-    <!-- Footer with background image -->
-    <div class="footer-wrapper">
-        <!-- Top border effect -->
-        <div class="footer-top-border"></div>
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <div class="main-card">
+            <div class="content-wrapper">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1>Idara ya Makosa Yanayovuka Mipaka na Uhujumu Uchumi</h1>
+                    <p class="intro-text">
+                        This department is responsible for managing and prosecuting cases related to corruption, 
+                        economic sabotage, money laundering, drug trafficking, cybercrime, and cross-border offenses 
+                        to ensure justice and economic stability in Zanzibar.
+                    </p>
+                </div>
 
-        <!-- Main Footer Content -->
-        <div class="footer-main">
-            <!-- Grid lines for modern look -->
-            <div class="grid-lines" id="gridLines"></div>
-
-            <div class="footer-container">
-                <!-- WASILIANA NASI -->
-                <div class="footer-column">
-                    <h3>WASILIANA NASI</h3>
-                    <ul>
-                        <li>Ofisi ya Rais,</li>
-                        <li>Mamlaka ya Serikali Mtandao,</li>
-                        <li>Mtumba-Mtaa wa Mtandao.,</li>
-                        <li>S.L.P 2833, 40404 DODOMA.</li>
-                        <li>Barua pepe: <a href="mailto:barua@ega.go.tz">barua@ega.go.tz</a></li>
-                        <li>Simu: +255 026 - 296 1957</li>
+                <!-- Overview Section -->
+                <div class="overview-section">
+                    <h2>Department Overview</h2>
+                    <p>
+                        Idara hii itahusika na Usimamizi na uendeshaji wa mashtaka katika makosa yanayohusiana na rushwa, 
+                        uhujumu uchumi, utakasaji wa fedha haramu, dawa za kulevya, uhalifu wa kimtandao na makosa yanayovuka 
+                        mipaka.
+                    </p>
+                    <p>
+                        Idara hii itakuwa na Divisheni mbili (2) ambazo ni:
+                    </p>
+                    <ul style="margin: 15px 0 15px 20px; color: #444; line-height: 1.8;">
+                        <li><strong>Divisheni ya Rushwa, Uhujumu Uchumi na Utakatishaji Fedha Haramu</strong></li>
+                        <li><strong>Divisheni ya Makosa Yanayovuka Mipaka, Dawa za Kulevya na Uhalifu wa Mtandao</strong></li>
                     </ul>
+                    
+                    <div class="crime-types">
+                        <div class="crime-type-item">Corruption Cases</div>
+                        <div class="crime-type-item">Economic Sabotage</div>
+                        <div class="crime-type-item">Money Laundering</div>
+                        <div class="crime-type-item">Drug Trafficking</div>
+                        <div class="crime-type-item">Cybercrime</div>
+                        <div class="crime-type-item">Cross-border Offenses</div>
+                    </div>
+                </div>
 
-                    <div class="contact-info">
-                        <h3>FIKA TIMU YETU</h3>
-                        <p>Fikia timu yetu ya msaada wakati wowote – tunapatikana saa 24 kila siku.</p>
-                        <div class="phone-numbers">
-                            <div class="phone-number">
-                                <i class="fas fa-phone"></i> +255 764 292 299
+                <!-- Divisions Section -->
+                <div class="divisions-section">
+                    <h2>Divisions</h2>
+                    <p style="margin-bottom: 25px; color: #555;">
+                        The department is organized into two specialized divisions, each focusing on specific types of crimes:
+                    </p>
+                    
+                    <div class="divisions-grid">
+                        <!-- Division 1 -->
+                        <div class="division-card">
+                            <div class="division-icon">💰</div>
+                            <h3>Division of Corruption, Economic Sabotage, and Money Laundering</h3>
+                            <p>
+                                This division handles all cases related to corruption, economic crimes, and money 
+                                laundering offenses. It focuses on protecting the economic integrity of Zanzibar 
+                                by prosecuting financial crimes and recovering illicit assets.
+                            </p>
+                            <p>
+                                <strong>Focus Areas:</strong> Bribery, embezzlement, fraud, tax evasion, economic 
+                                sabotage, and money laundering schemes.
+                            </p>
+                        </div>
+
+                        <!-- Division 2 -->
+                        <div class="division-card">
+                            <div class="division-icon">🌐</div>
+                            <h3>Division of Transnational Crimes, Drugs, and Cybercrime</h3>
+                            <p>
+                                This division deals with cross-border criminal activities, drug trafficking, and 
+                                cyber-related offenses. It coordinates with international agencies to combat 
+                                transnational organized crime networks.
+                            </p>
+                            <p>
+                                <strong>Focus Areas:</strong> International drug trafficking, human trafficking, 
+                                terrorism financing, cyber fraud, and cross-border organized crime.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Responsibilities Section -->
+                <div class="responsibilities-section">
+                    <h2>Majukumu ya Idara (Department Responsibilities)</h2>
+                    <p style="margin-bottom: 25px; color: #555;">
+                        The department has the following key responsibilities in combating transnational and economic crimes:
+                    </p>
+                    
+                    <div class="responsibilities-list">
+                        <!-- Responsibility 1 -->
+                        <div class="responsibility-item">
+                            <div class="responsibility-number">1</div>
+                            <div class="responsibility-content">
+                                <div class="responsibility-title">Management and Prosecution of Cases</div>
+                                <p class="responsibility-description">
+                                    Kusimamia Uendeshaji Mashtaka katika makosa yanayohusiana na rushwa, uhujumu uchumi, 
+                                    utakatishaji wa fedha haramu, dawa za kulevya, uhalifu wa kimtandao na makosa yanayovuka mipaka.
+                                </p>
                             </div>
-                            <div class="phone-number">
-                                <i class="fas fa-phone"></i> +255 0763 292 299
+                        </div>
+
+                        <!-- Responsibility 2 -->
+                        <div class="responsibility-item">
+                            <div class="responsibility-number">2</div>
+                            <div class="responsibility-content">
+                                <div class="responsibility-title">Legal Analysis and Documentation</div>
+                                <p class="responsibility-description">
+                                    Kuzifanyia uchambuzi hukumu au maamuzi madogo ya Mahkama pamoja na kuandaa nyaraka 
+                                    zinazohitajika katika hatua ya Rufaa, Mapitio au Marejeo ya Mienendo ya Kesi pale inapohitajika.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Responsibility 3 -->
+                        <div class="responsibility-item">
+                            <div class="responsibility-number">3</div>
+                            <div class="responsibility-content">
+                                <div class="responsibility-title">Appeals Management</div>
+                                <p class="responsibility-description">
+                                    Kusimamia na Kuendesha Rufaa husika zilizofunguliwa katika Mahkama kuhusiana na makosa 
+                                    ya rushwa, uhujumu uchumi, utakatishaji wa fedha haramu, dawa za kulevya, uhalifu wa 
+                                    kimtandao na makosa yanayovuka mipaka.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Responsibility 4 -->
+                        <div class="responsibility-item">
+                            <div class="responsibility-number">4</div>
+                            <div class="responsibility-content">
+                                <div class="responsibility-title">Advice to Investigation Institutions</div>
+                                <p class="responsibility-description">
+                                    Kutoa Maelekezo na Ushauri kwa Taasisi zinazofanya Upelelezi wa makosa ya rushwa, 
+                                    uhujumu uchumi, utakatishaji wa fedha haramu, dawa za kulevya, uhalifu wa kimtandao 
+                                    na makosa yanayovuka mipaka.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Responsibility 5 -->
+                        <div class="responsibility-item">
+                            <div class="responsibility-number">5</div>
+                            <div class="responsibility-content">
+                                <div class="responsibility-title">International Agreements Implementation</div>
+                                <p class="responsibility-description">
+                                    Kusimamia utekelezaji wa Mikataba ya Kimataifa na Kikanda pamoja na nyenzo nyengine 
+                                    ambazo zinajikita katika kuzuia, kudhibiti pamoja na kuendesha Mashtaka katika makosa 
+                                    ya rushwa, uhujumu uchumi, utakatishaji wa fedha haramu, dawa za kulevya, uhalifu wa 
+                                    kimtandao na makosa yanayovuka mipaka.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Responsibility 6 -->
+                        <div class="responsibility-item">
+                            <div class="responsibility-number">6</div>
+                            <div class="responsibility-content">
+                                <div class="responsibility-title">Asset Forfeiture and Recovery</div>
+                                <p class="responsibility-description">
+                                    Kusimamia na kuendesha maombi ya kuzuia, ukamataji na utaifishaji wa Mali za Wahalifu 
+                                    zilizopatikana kwa makosa ya rushwa, uhujumu uchumi, utakatishaji wa fedha haramu, dawa 
+                                    za kulevya, uhalifu wa Kimtandao na Makosa yanayovuka mipaka.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Responsibility 7 -->
+                        <div class="responsibility-item">
+                            <div class="responsibility-number">7</div>
+                            <div class="responsibility-content">
+                                <div class="responsibility-title">Regional and International Cooperation</div>
+                                <p class="responsibility-description">
+                                    Kuanzisha na kuendeleza mashirikiano na Taasisi za Kikanda na Kimataifa zinazojikita 
+                                    katika kuzuia, kudhibiti makosa yanayohusiana na makosa yanayopangwa na yanayovuka mipaka.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Responsibility 8 -->
+                        <div class="responsibility-item">
+                            <div class="responsibility-number">8</div>
+                            <div class="responsibility-content">
+                                <div class="responsibility-title">Legal Advice to the Office</div>
+                                <p class="responsibility-description">
+                                    Kuiwashauri Afisi kuhusiana na makosa ya rushwa, uhujumu uchumi, utakatishaji wa fedha 
+                                    haramu, dawa za kulevya, uhalifu wa kimtandao na makosa yanayovuka mipaka.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Responsibility 9 -->
+                        <div class="responsibility-item">
+                            <div class="responsibility-number">9</div>
+                            <div class="responsibility-content">
+                                <div class="responsibility-title">Division Coordination</div>
+                                <p class="responsibility-description">
+                                    Kusimamia na kuratibu utendaji wa Divisheni zilizo chini ya Idara.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Responsibility 10 -->
+                        <div class="responsibility-item">
+                            <div class="responsibility-number">10</div>
+                            <div class="responsibility-content">
+                                <div class="responsibility-title">Legal Research and Review</div>
+                                <p class="responsibility-description">
+                                    Kufanya Utafiti, Mapitio na kuandaa mapendekezo kuhusu ubora na nafasi ya Sheria mbali 
+                                    mbali zinazohusiana na makosa ya Rushwa, uhujumu uchumi, utakatishaji wa fedha haramu, 
+                                    dawa za kulevya, uhalifu wa kimtandao na Makosa yanayovuka mipaka.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Responsibility 11 -->
+                        <div class="responsibility-item">
+                            <div class="responsibility-number">11</div>
+                            <div class="responsibility-content">
+                                <div class="responsibility-title">Public Legal Education</div>
+                                <p class="responsibility-description">
+                                    Kutoa elimu kwa jamii kuhusiana na Sheria za makosa ya Rushwa, uhujumu uchumi, 
+                                    utakatishaji wa fedha haramu, dawa za kulevya, uhalifu wa kimtandao na makosa yanayovuka mipaka.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- TOVUTI MASHUHURI -->
-                <div class="footer-column">
-                    <h3>TOVUTI MASHUHURI</h3>
-                    <ul>
-                        <li><a href="#">Ofisi ya Rais</a></li>
-                        <li><a href="#">Ofisi ya Makamu wa Rais</a></li>
-                        <li><a href="#">Ofisi ya Waziri Mkuu</a></li>
-                        <li><a href="#">Katibu Mkuu Kiongozi</a></li>
-                        <li><a href="#">OR-UTUMISHI</a></li>
-                    </ul>
-
-                    <h3 style="margin-top: 20px;">MCIT</h3>
-                    <ul>
-                        <li><a href="#">TCRA</a></li>
-                        <li><a href="#">COSTECH</a></li>
-                        <li><a href="#">TTCL</a></li>
-                        <li><a href="#">Tume ya TEHAMA</a></li>
-                    </ul>
+                <!-- Important Note Section -->
+                <div class="note-section">
+                    <h3>Strategic Importance</h3>
+                    <p>
+                        This department plays a crucial role in maintaining economic stability and national security 
+                        in Zanzibar. By combating transnational and economic crimes, it protects the financial system, 
+                        preserves public resources, and ensures that Zanzibar remains secure from organized criminal 
+                        networks operating across borders. The department works in close collaboration with regional 
+                        and international partners to effectively address the complex nature of these crimes.
+                    </p>
                 </div>
-
-                <!-- HUDUMA MTANDAO -->
-                <div class="footer-column">
-                    <h3>HUDUMA MTANDAO</h3>
-                    <ul>
-                        <li><a href="#">Tovuti ya Huduma za TEHAMA za Serikali (GISP)</a></li>
-                        <li><a href="#">Dawati la Msaada la Serikali</a></li>
-                        <li><a href="#">Government Enterprise Service Bus</a></li>
-                        <li><a href="#">e-Mikutano</a></li>
-                        <li><a href="#">Bunifu</a></li>
-                    </ul>
-
-                    <div class="social-icons" style="margin-top: 30px; text-align: center;">
-                        <h3 style="color: white; font-size: 0.9rem; margin-bottom: 10px;">UNGA NA SISI</h3>
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Floating Buttons -->
-            <div class="floating-buttons">
-                <div class="floating-btn" title="Search">
-                    <i class="fas fa-search"></i>
-                </div>
-                <div class="floating-btn" title="Support">
-                    <i class="fas fa-headset"></i>
-                </div>
-                <div class="floating-btn" title="Chat">
-                    <i class="fas fa-comments"></i>
-                </div>
-                <div class="floating-btn" title="Report">
-                    <i class="fas fa-flag"></i>
-                </div>
-                <div class="floating-btn" title="Language">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <div class="floating-btn" title="Settings">
-                    <i class="fas fa-cog"></i>
-                </div>
-            </div>
-        </div>
-
-        <!-- Copyright Section -->
-        <div class="copyright">
-            <div class="copyright-container">
-                <!-- Column 1: Copyright info -->
-                <div class="copyright-column">
-                    <h4>© 2024 MAMLKA YA SERIKALI MTANDAO</h4>
-                    <p>Haki zote zimehifadhiwa. Nyenzo zote kwenye tovuti hii ni mali ya Mamlaka ya Serikali Mtandao - TEHAMA.</p>
-                    <p>Tovuti hii inatumia cookies kuboresha uzoefu wako. Kwa kutumia tovuti hii, unakubali Matumizi yetu ya Cookies.</p>
-                </div>
-
-                <!-- Column 2: Quick links -->
-                <div class="copyright-column">
-                    <h4>VIUNGO VYA HARAKA</h4>
-                    <ul class="copyright-links">
-                        <li><a href="#">Sera ya Faragha</a></li>
-                        <li><a href="#">Masharti ya Matumizi</a></li>
-                        <li><a href="#">Sera ya Cookies</a></li>
-                        <li><a href="#">Ramani ya Tovuti</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3: Additional info -->
-                <div class="copyright-column">
-                    <h4>TAARIFA ZAIDI</h4>
-                    <ul class="copyright-links">
-                        <li><a href="#">Wasiliana Nasi</a></li>
-                        <li><a href="#">Maswali Yanayoulizwa Mara kwa Mara (FAQ)</a></li>
-                        <li><a href="#">Vidokezo vya Usalama</a></li>
-                        <li><a href="#">Matangazo ya Serikali</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Bottom copyright line -->
-            <div class="copyright-bottom">
-                <p>Tovuti Hii Inasimamiwa na Mamlaka ya Serikali Mtandao - Ofisi ya Rais, S.L.P 2833, 40404 DODOMA, Tanzania</p>
             </div>
         </div>
     </div>
 
-    <script>
-        // Generate grid lines dynamically
-        document.addEventListener('DOMContentLoaded', function() {
-            const gridLines = document.getElementById('gridLines');
-            const columns = 12;
-            const rows = 8;
-
-            // Create vertical lines
-            for (let i = 1; i < columns; i++) {
-                const line = document.createElement('div');
-                line.className = 'grid-line vertical';
-                line.style.left = `${(i / columns) * 100}%`;
-                gridLines.appendChild(line);
-            }
-
-            // Create horizontal lines
-            for (let i = 1; i < rows; i++) {
-                const line = document.createElement('div');
-                line.className = 'grid-line horizontal';
-                line.style.top = `${(i / rows) * 100}%`;
-                gridLines.appendChild(line);
-            }
-        });
-    </script>
-
+    <!-- Footer Component -->
+    @livewire('footer')
 </body>
 </html>
+
+https://zaeca.go.tz/
+https://www.zanzibarassembly.go.tz/en

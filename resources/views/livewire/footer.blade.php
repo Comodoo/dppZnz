@@ -1,17 +1,5 @@
 <footer>
     <style>
-        /* * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            min-height: 100vh;
-        } */
-
         /* Main footer wrapper with background image and gradient overlay */
         .footer-wrapper {
             position: relative;
@@ -239,8 +227,7 @@
             opacity: 0.8;
         }
 
-        /* Floating buttons
-        .floating-buttons {
+        {{--  Floating buttons  --}} .floating-buttons {
             position: fixed;
             right: 20px;
             top: 50%;
@@ -261,7 +248,7 @@
             justify-content: center;
             color: #1e88e5;
             font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s ease, background 0.2s ease;
         }
 
@@ -272,7 +259,81 @@
 
         .floating-btn i {
             pointer-events: none;
-        } */
+        }
+
+        /* Flag buttons */
+        .flag-btn img {
+            width: 22px;
+            height: 16px;
+            border-radius: 2px;
+        }
+
+        /* Dropdown container */
+        .has-dropdown {
+            position: relative;
+        }
+
+        /* Dropdown box */
+        .floating-dropdown {
+            position: absolute;
+            right: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            color: #1e88e5;
+            border-radius: 8px;
+            padding: 8px 0;
+            min-width: 180px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s ease;
+            z-index: 2000;
+        }
+
+        /* Dropdown links */
+        .floating-dropdown a {
+            display: block;
+            padding: 8px 15px;
+            color: #1e88e5;
+            text-decoration: none;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .floating-dropdown a:hover {
+            background: #f5f7fa;
+            color: #1976d2;
+        }
+
+        /* Social dropdown style */
+        .social-dropdown {
+            display: flex;
+            gap: 10px;
+            padding: 10px 12px;
+        }
+
+        .social-dropdown a {
+            width: 36px;
+            height: 36px;
+            background: #1e88e5;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-dropdown a:hover {
+            background: #1976d2;
+        }
+
+        /* Show dropdown on hover */
+        .has-dropdown:hover .floating-dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+
 
         /* Grid lines effect */
         .grid-lines {
@@ -390,17 +451,7 @@
                         <li>Fax: {{ $contactInfo['fax'] }}</li>
                     </ul>
 
-                    {{-- <div class="contact-info">
-                        <h3>FIKA TIMU YETU</h3>
-                        <p>{{ $supportInfo['description'] }}</p>
-                        <div class="phone-numbers">
-                            @foreach ($supportInfo['phones'] as $phone)
-                            <div class="phone-number">
-                                <i class="fas fa-phone"></i> {{ $phone }}
-                            </div>
-                            @endforeach
-                        </div>
-                    </div> --}}
+
                 </div>
 
                 <!-- TOVUTI MASHUHURI -->
@@ -420,7 +471,7 @@
                     <h3>Quick Links</h3>
                     <ul>
                         @foreach ($onlineServices as $service => $links)
-                            <li><a target="_blank" href="{{$links}}">{{ $service }}</a></li>
+                            <li><a target="_blank" href="{{ $links }}">{{ $service }}</a></li>
                         @endforeach
                     </ul>
 
@@ -436,27 +487,49 @@
                 </div>
             </div>
 
-            {{-- <!-- Floating Buttons -->
+            <!-- Floating Buttons -->
             <div class="floating-buttons">
+
+                <!-- Search -->
                 <div class="floating-btn" title="Search">
                     <i class="fas fa-search"></i>
                 </div>
-                <div class="floating-btn" title="Support">
-                    <i class="fas fa-headset"></i>
+
+                <!-- Language: Swahili -->
+                <div class="floating-btn flag-btn" title="Kiswahili">
+                    <img src="https://flagcdn.com/w20/tz.png" alt="Swahili">
                 </div>
-                <div class="floating-btn" title="Chat">
-                    <i class="fas fa-comments"></i>
+
+                <!-- Language: English -->
+                <div class="floating-btn flag-btn" title="English">
+                    <img src="https://flagcdn.com/w20/gb.png" alt="English">
                 </div>
-                <div class="floating-btn" title="Report">
-                    <i class="fas fa-flag"></i>
+
+                <!-- Quick Links -->
+                <div class="floating-btn has-dropdown" title="Our System">
+                    <i class="fas fa-link"></i>
+
+                    <div class="floating-dropdown">
+                        <a href="https://cfms.dppznz.go.tz/login">CSFM</a>
+                        <a href="http://102.214.44.10:5050/complains">Complaints</a>
+                        <a href="https://mail.dppznz.go.tz/">Mailing System</a>
+                    </div>
                 </div>
-                <div class="floating-btn" title="Language">
-                    <i class="fas fa-globe"></i>
+
+                <!-- Social Media -->
+                <div class="floating-btn has-dropdown" title="Social Media">
+                    <i class="fas fa-share-alt"></i>
+
+                    <div class="floating-dropdown social-dropdown">
+                        <a href="{{ $socialLinks['facebook'] }}"><i class="fab fa-facebook-f"></i></a>
+                        <a href="{{ $socialLinks['twitter'] }}"><i class="fab fa-x-twitter"></i></a>
+                        <a href="{{ $socialLinks['youtube'] }}"><i class="fab fa-youtube"></i></a>
+                        <a href="{{ $socialLinks['instagram'] }}"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
-                <div class="floating-btn" title="Settings">
-                    <i class="fas fa-cog"></i>
-                </div>
-            </div> --}}
+
+            </div>
+
         </div>
 
         <!-- Copyright Section -->
@@ -472,27 +545,7 @@
 
                 </div>
 
-                {{-- <!-- Column 2: Quick links -->
-                <div class="copyright-column">
-                    <h4>VIUNGO VYA HARAKA</h4>
-                    <ul class="copyright-links">
-                        <li><a href="#">Sera ya Faragha</a></li>
-                        <li><a href="#">Masharti ya Matumizi</a></li>
-                        <li><a href="#">Sera ya Cookies</a></li>
-                        <li><a href="#">Ramani ya Tovuti</a></li>
-                    </ul>
-                </div> --}}
 
-                <!-- Column 3: Additional info -->
-                {{-- <div class="copyright-column">
-                    <h4>TAARIFA ZAIDI</h4>
-                    <ul class="copyright-links">
-                        <li><a href="#">Wasiliana Nasi</a></li>
-                        <li><a href="#">Maswali Yanayoulizwa Mara kwa Mara (FAQ)</a></li>
-                        <li><a href="#">Vidokezo vya Usalama</a></li>
-                        <li><a href="#">Matangazo ya Serikali</a></li>
-                    </ul>
-                </div> --}}
             </div>
 
             <!-- Bottom copyright line -->

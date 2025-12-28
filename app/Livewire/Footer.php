@@ -26,14 +26,18 @@ class Footer extends Component
             'ZLRC' => 'https://zlrc.ac.tz/',
             'Wizara ya katiba na sheria Zanzibbar' => 'https://utumishismz.go.tz/home/',
             'Mahakama kuu Zanzibar' => 'https://judiciaryzanzibar.go.tz/',
-            'Ongea na DPP' => 'http://102.214.44.10:5050/complains'
+            'Ongea na DPP' => 'http://102.214.44.10:5050/complains',
+            'Baraza la wawakilishi Zanzibar' => 'https://www.zanzibarassembly.go.tz/en',
+            'ZAEC' => 'https://zaeca.go.tz/'
         ],
     ];
 
     public $onlineServices = [
-        'CSFM' => 'https://cfms.dppznz.go.tz/login',
-        'Complaints' => 'http://102.214.44.10:5050/complains',
-        'Mailing System' => 'https://mail.dppznz.go.tz/'
+        'Prosecutions' => '#',
+        'News and Updates' => '{{route("news")}}',
+        'Director Message' => '{{route("director")}}',
+        'Managements' => '{{route("organization")}}',
+        'Media Center' => '{{route("photo")}}'
     ];
 
     public $socialLinks = [
